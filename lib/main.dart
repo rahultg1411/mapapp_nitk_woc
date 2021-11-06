@@ -15,15 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blueGrey,
       ),
       home: HomePage(),
@@ -38,28 +29,57 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text('NITK Map'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Welcome to NITK',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage("images/background.jpg"),
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Welcome to NITK',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 50,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.black45,
+                ),
+              ),
+              const SizedBox(
+                width: 200.0,
+                height: 300.0,
+              ),
+              const Text(
+                'Explore NITK',
+                style: TextStyle(
+                  color: Colors.lightGreenAccent,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
+        elevation: 25.0,
         onPressed: () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => MapScreen())),
         tooltip: 'Map',
         child: const Icon(Icons.pin_drop_outlined),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
