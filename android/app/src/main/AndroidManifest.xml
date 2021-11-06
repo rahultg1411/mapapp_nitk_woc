@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mapapp_nitk_woc">
    <application
-        android:label="mapapp_nitk_woc"
+        android:label="NITK Map"
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyCwhrIfhaeolaODr3swxCStxleeleIF8zw"/>
