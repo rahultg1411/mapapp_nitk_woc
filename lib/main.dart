@@ -48,11 +48,11 @@ class HomePage extends StatelessWidget {
               const Text(
                 'Welcome to NITK',
                 style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 50,
+                  color: Color.fromRGBO(207, 14, 58, 1.0),
+                  fontSize: 43,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
-                  backgroundColor: Colors.black45,
+                  backgroundColor: Color.fromRGBO(7, 41, 22, 0.8),
                 ),
               ),
               const SizedBox(
